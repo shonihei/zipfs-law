@@ -4,7 +4,7 @@ import re
 import matplotlib.pyplot as plt
 import numpy as np
 
-def find_frequencies(filename):
+def extract_frequencies(filename):
     d = dict()
     with open(filename, "r") as f:
         for line in f:
@@ -20,7 +20,7 @@ def dump(dic, filename):
         for k, v in dic.items():
             f.write("{},{}\n".format(k, v))
 
-def build_histogram(filename, limit=20):
+def build_histogram(filename, outputfilename=None, limit=20):
     # open file and extract data
     data = []
     with open(filename, "r") as f:
@@ -49,4 +49,6 @@ def build_histogram(filename, limit=20):
     plt.xticks(y_pos, words)
     plt.ylabel('Occurence')
     plt.title('Word Frequency in {}'.format(filename))
+    if outputfilename:
+        plt.savefig(outputfilename+'.png')
     plt.show()
