@@ -1,7 +1,9 @@
 # Word Frequency Analyzer
 
 This is a mini-project that I always wanted to spend a bit of time to do.
-On one of Vsauce's amazing videos, I came across a concept called Zipf's Law which is a natural language phenomenon seen in many languages. It goes a little bit like this. Zipf's Law claims that in a sufficiently long string of meaningful words (not random sequence of words), distribution of a particular word is ivnersely related to its ranking.
+On one of Vsauce's amazing videos, I came across a [concept called Zipf's Law](https://www.youtube.com/watch?v=fCn8zs912OE&t=236s&ab_channel=Vsauce) which is a natural language phenomenon seen in many languages.
+
+It goes a little bit like this. Zipf's Law claims that in a sufficiently long string of meaningful words (not random sequence of words), distribution of a particular word is ivnersely related to its ranking.
 
 For instance, if we consider "The", English's most common word, to have a distribution of 1, then the second most frequent word, "Be", will have a distribution of 1/2 or 0.5. There seems to be no definitive explanation for why this is the case, but Zipf's Law has applications outside of our languages. Empirical studies have found that Zipf's Law can accurately predict the distribution of population among the largest cities in America.
 
@@ -22,7 +24,6 @@ Not much. You'll just need to have matplotlib and numpy installed.
 Download your favorite text, and then run the following command!
 ```python
 >>> frequencies = extract_frequencies("./text_files/sherlock-holmes.txt")
->>> type(frequencies)
 >>> dump(frequencies, "frequencies.csv")
 >>> build_histogram("frequencies.csv", "frequencies", 10)
 ```
